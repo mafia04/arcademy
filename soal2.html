@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vertifikasi</title>
+</head>
+<body>
+<form method="post" onsubmit="return validateForm()" action="#">
+	<input type="text" name="username" id="username" placeholder="username" required="true">
+	<input type="email" name="email" id="email" placeholder="email" required="true">
+	<input type="text" name="Hp" id="Hp" placeholder="Ponsel" required="true">
+	<input type="submit" name="">
+</form>
+<script type="text/javascript">
+function validateForm() {
+    var username = document.getElementById("username").value;
+	var email = document.getElementById("email").value;
+	var Hp = document.getElementById("Hp").value;
+	var sandi_username=/^[a-z]+$/;
+	var numberExp = /^[0-9]+$/;
+		if(!Hp.match(numberExp)) {
+     		alert('Nomor Ponsel harus berupa angka Numeric');
+     		Hp.focus();
+     		return false;
+   		}
+   		if(!username.match(sandi_username)) {
+     		alert('Username Harus berupa Huruf Kecil');
+     		username.focus();
+     		return false;
+   		}
+   		if(!email.match(sandi_username)) {
+     		alert('Email Harus berupa Huruf Kecil');
+     		username.focus();
+     		return false;
+   		}  		
+}
+</script>
+</body>
+</html>
